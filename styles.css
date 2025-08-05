@@ -2386,76 +2386,129 @@ html {
     }
 } 
 
-/* Brand icon styling for Amoon links */
+/* Brand icon styling for Amoon links - New Style */
 .brand-icon {
-    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #ff6348 100%);
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 400% 400%;
     color: white;
-    border-color: #ff6b6b;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+    border: 3px solid transparent;
+    border-radius: 50%;
+    box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
     position: relative;
     overflow: hidden;
-    animation: brandPulse 2s ease-in-out infinite;
+    animation: gradientShift 3s ease infinite, floating 4s ease-in-out infinite;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@keyframes brandPulse {
-    0%, 100% {
-        transform: scale(1);
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
     }
     50% {
-        transform: scale(1.05);
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(2deg);
+    }
+    50% {
+        transform: translateY(-4px) rotate(-1deg);
+    }
+    75% {
+        transform: translateY(-12px) rotate(1deg);
     }
 }
 
 .brand-icon::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: rotate 2s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.brand-icon::after {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 50%;
+    z-index: -1;
 }
 
 .brand-icon:hover {
-    background: linear-gradient(135deg, #ee5a24 0%, #ff6b6b 50%, #ff6348 100%);
-    color: white;
-    border-color: #ee5a24;
-    transform: translateY(-5px) scale(1.1);
-    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    transform: translateY(-8px) scale(1.15) rotate(5deg);
+    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6), 0 0 30px rgba(118, 75, 162, 0.4);
+    animation-play-state: paused;
 }
 
 .brand-icon:hover::before {
-    left: 100%;
+    opacity: 1;
 }
 
 /* Special styling for Instagram brand icon */
 .brand-icon:last-child {
-    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-    border-color: #dc2743;
-    box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
-    animation: instagramGlow 3s ease-in-out infinite;
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff6348, #ff4757);
+    background-size: 400% 400%;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4);
+    animation: gradientShift 2.5s ease infinite, instagramFloat 3s ease-in-out infinite;
 }
 
-@keyframes instagramGlow {
+@keyframes instagramFloat {
     0%, 100% {
-        box-shadow: 0 4px 15px rgba(220, 39, 67, 0.3);
+        transform: translateY(0px) scale(1);
+    }
+    25% {
+        transform: translateY(-6px) scale(1.05);
     }
     50% {
-        box-shadow: 0 4px 25px rgba(220, 39, 67, 0.6), 0 0 20px rgba(220, 39, 67, 0.4);
+        transform: translateY(-2px) scale(0.98);
     }
+    75% {
+        transform: translateY(-10px) scale(1.08);
+    }
+}
+
+.brand-icon:last-child::after {
+    background: linear-gradient(45deg, #ff6b6b, #ee5a24);
 }
 
 .brand-icon:last-child:hover {
-    background: linear-gradient(135deg, #bc1888 0%, #cc2366 25%, #dc2743 50%, #e6683c 75%, #f09433 100%);
-    border-color: #bc1888;
-    box-shadow: 0 8px 25px rgba(188, 24, 136, 0.5);
+    transform: translateY(-10px) scale(1.2) rotate(-3deg);
+    box-shadow: 0 20px 50px rgba(255, 107, 107, 0.7), 0 0 40px rgba(238, 90, 36, 0.5);
 }
 
 /* Responsive adjustments for brand icons */
 @media (max-width: 480px) {
     .brand-icon {
-        width: 45px;
-        height: 45px;
+        width: 50px;
+        height: 50px;
+        animation-duration: 2s, 3s;
+    }
+    
+    .brand-icon:last-child {
+        animation-duration: 2s, 2.5s;
     }
 } 
