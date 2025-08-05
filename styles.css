@@ -2385,3 +2385,25 @@ html {
         gap: 1rem;
     }
 } 
+
+/* Brand icon styling for Amoon links */
+.brand-icon {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #667eea;
+}
+
+.brand-icon:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    color: white;
+    border-color: #764ba2;
+    transform: translateY(-3px) scale(1.05);
+}
+
+/* Responsive adjustments for brand icons */
+@media (max-width: 480px) {
+    .brand-icon {
+        width: 40px;
+        height: 40px;
+    }
+} 
