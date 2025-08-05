@@ -8,6 +8,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .brand-icon:hover {
+            transform: translateY(-8px) scale(1.15) rotate(5deg) !important;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6), 0 0 30px rgba(118, 75, 162, 0.4) !important;
+        }
+        
+        .brand-icon:last-child:hover {
+            transform: translateY(-10px) scale(1.2) rotate(-3deg) !important;
+            box-shadow: 0 20px 50px rgba(255, 107, 107, 0.7), 0 0 40px rgba(238, 90, 36, 0.5) !important;
+        }
+    </style>
 </head>
 <body data-theme="dark">
     <!-- Navigation -->
@@ -70,10 +87,10 @@
                         <a href="tel:+212619311579" class="social-icon">
                             <i class="fas fa-phone"></i>
                         </a>
-                        <a href="https://www.amoonfashion.shop" target="_blank" class="social-icon brand-icon" style="background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c) !important; animation: gradientShift 3s ease infinite !important;">
+                        <a href="https://www.amoonfashion.shop" target="_blank" class="social-icon brand-icon" style="background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c) !important; background-size: 400% 400% !important; animation: gradientShift 3s ease infinite !important; border: 3px solid transparent !important; border-radius: 50% !important; box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4) !important; position: relative !important; overflow: hidden !important;">
                             <i class="fas fa-tshirt"></i>
                         </a>
-                        <a href="https://www.instagram.com/a_moon_fashion_" target="_blank" class="social-icon brand-icon" style="background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff6348, #ff4757) !important; animation: gradientShift 2.5s ease infinite !important;">
+                        <a href="https://www.instagram.com/a_moon_fashion_" target="_blank" class="social-icon brand-icon" style="background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff6348, #ff4757) !important; background-size: 400% 400% !important; animation: gradientShift 2.5s ease infinite !important; border: 3px solid transparent !important; border-radius: 50% !important; box-shadow: 0 8px 32px rgba(255, 107, 107, 0.4) !important; position: relative !important; overflow: hidden !important;">
                             <i class="fab fa-instagram"></i>
                         </a>
                     </div>
